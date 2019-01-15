@@ -27,7 +27,7 @@ const router = new Router({
   }
 });
 
-router.beforeEach((_, __, next) => {
+router.beforeEach((to, from, next) => {
   if (from.meta.keep_alive) {
     from.meta.saved_position = { x: window.pageXOffset, y: window.pageYOffset };
   }
