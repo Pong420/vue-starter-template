@@ -4,12 +4,12 @@
   <div
     class="progress"
     :style="{
-    'width': percent+'%',
-    'height': height,
-    'background-color': canSuccess? color : failedColor,
-    'opacity': show ? 1 : 0
-  }"
-  ></div>
+      'width': percent+'%',
+      'height': height,
+      'background-color': canSuccess? color : failedColor,
+      'opacity': show ? 1 : 0
+    }"
+  />
 </template>
 
 <script>
@@ -21,8 +21,8 @@ export default {
       canSuccess: true,
       duration: 2000,
       height: "3px",
-      color: "#FFBF00",
-      failedColor: "#ff0000"
+      color: "",
+      failedColor: ""
     };
   },
   methods: {
@@ -99,7 +99,6 @@ export default {
   width: 0%;
   transition: width 0.2s, opacity 0.4s;
   opacity: 1;
-  background-color: #efc14e;
   z-index: 999999;
 }
 </style>

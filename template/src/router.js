@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
 import ProgressBar from '@/components/ProgressBar.vue';
 
 Vue.use(Router);
@@ -18,11 +17,24 @@ const router = new Router({
       name: 'Home',
       component: Home
     }
-  ]
+  ],
+  scrollBehavior(to) {
+    if (to.matched.some(t => t.meta.keep_alive)) {
+      if (to.meta.saved_position) {
+        return to.meta.saved_position;
+      }
+    }
+  }
 });
 
-router.beforeEach(() => {
+router.beforeEach((_, __, next) => {
+  if (from.meta.keep_alive) {
+    from.meta.saved_position = { x: window.pageXOffset, y: window.pageYOffset };
+  }
+
   router.app.$progress.start();
+
+  next();
 });
 
 export default router;

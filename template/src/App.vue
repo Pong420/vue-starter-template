@@ -18,20 +18,19 @@ export default {
 }
 
 body {
-  margin: 0;
   font-size: 14px;
-
   font-family: Helvetica, Arial, "微軟正黑體", "微软正黑体",
     "Microsoft JhengHei", "微軟雅黑體", "微软雅黑体", "Microsoft YaHei",
     "華文黑體", "华文黑体", "STHeiti", "華文細黑", "华文细黑", "STXihei",
     "儷黑 Pro", "LiHei Pro", Tahoma, sans-serif;
+  margin: 0;
 }
 
 #app {
   position: relative;
   width: 100%;
   margin: 0 auto;
-  background: #1a1a1a;
+  min-height: 100vh;
 }
 
 a {
